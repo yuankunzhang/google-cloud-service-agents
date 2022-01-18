@@ -1,3 +1,8 @@
+output "artifactregistry_connection" {
+  description = "Artifact Registry service agent."
+  value       = "service-${var.project_number}@gcp-sa-artifactregistry.iam.gserviceaccount.com"
+}
+
 output "bigquery_connection" {
   description = "BigQuery Connection service agent."
   value       = "service-${var.project_number}@gcp-sa-bigqueryconnection.iam.gserviceaccount.com"
@@ -6,6 +11,12 @@ output "bigquery_connection" {
 output "bigquery_data_transfer" {
   description = "BigQuery Data Transfer service agent."
   value       = "service-${var.project_number}@gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com"
+}
+
+# https://cloud.google.com/iam/docs/service-accounts#google-managed_service_accounts
+output "cloud_api" {
+  description = "Google APIs service agent."
+  value       = "${var.project_number}@cloudservices.gserviceaccount.com"
 }
 
 output "cloud_asset" {
@@ -136,6 +147,11 @@ output "endpoints_consumer_portal" {
 output "firebase_rules" {
   description = "Firebase Rules service agent."
   value       = "service-${var.project_number}@firebase-rules.iam.gserviceaccount.com"
+}
+
+output "firestore" {
+  description = "Firestore service agent."
+  value       = "service-${var.project_number}@gcp-sa-firestore.iam.gserviceaccount.com"
 }
 
 output "service_networking" {
